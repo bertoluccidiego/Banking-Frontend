@@ -8,11 +8,11 @@ function CreateUser ({ setShowCreateUser }) {
 
   async function createUserHandler () {
     const createdUser = await usersServices.createUser({ username, password });
-    console.log('user created');
-    console.log(createdUser);
 
     setUsername('');
     setPassword('');
+
+    setShowCreateUser(false);
   }
 
   return (

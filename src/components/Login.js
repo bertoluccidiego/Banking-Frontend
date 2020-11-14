@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 import loginServices from '../services/login';
 
-function Login ({ setShowCreateUser }) {
-  const [username, setUsername] = useState('');
+function Login ({ setShowCreateUser, setLoggedin, username, setUsername }) {
   const [password, setPassword] = useState('');
 
   async function loginHandler () {
@@ -11,8 +10,8 @@ function Login ({ setShowCreateUser }) {
     console.log('user loged in');
     console.log(loggedinUser);
 
-    setUsername('');
     setPassword('');
+    setLoggedin(true);
   }
 
   return (
