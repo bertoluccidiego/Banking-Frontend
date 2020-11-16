@@ -1,16 +1,19 @@
-function LoggedinUser ({ username, setLoggedin }) {
-  function logoutHandler () {
+function LoggedinUser({ username, setLoggedin }) {
+  function logoutHandler() {
     setLoggedin(false);
+    localStorage.removeItem('userData');
   }
 
   return (
-    <div className='LoggedinUser'>
-      <h3>Welcome {username}!</h3>
+    <div className="LoggedinUser">
+      <h3>{`Welcome ${username}!`}</h3>
       <h5>Account</h5>
       <h5>Movements</h5>
-      <button type='button' name='logout' onClick={logoutHandler}>logout</button>
+      <button type="button" name="logout" onClick={logoutHandler}>
+        logout
+      </button>
     </div>
-  )
+  );
 }
 
 export default LoggedinUser;
